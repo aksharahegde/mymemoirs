@@ -1,5 +1,5 @@
-const META_TITLE = ''
-const META_DESC = ''
+const META_TITLE = "";
+const META_DESC = "";
 
 export default defineNuxtConfig({
   app: {
@@ -46,6 +46,13 @@ export default defineNuxtConfig({
       login: "/login",
       callback: "/confirm",
       exclude: ["/"],
+    },
+  },
+  runtimeConfig: {
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseAnon: process.env.SUPABASE_KEY,
+    public: {
+      apiBase: "/api",
     },
   },
 });

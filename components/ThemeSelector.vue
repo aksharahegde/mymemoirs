@@ -24,7 +24,7 @@ const themes = [
   { label: "acid", value: "acid" },
   { label: "bumblebee", value: "bumblebee"},
   { label: "lofi", value: "lofi"},
-  { label: "luxury", value: "luxury" },
+  { label: "forest", value: "forest" },
 ];
 const selectTheme = (theme) => {
   document.documentElement.setAttribute("data-theme", theme);

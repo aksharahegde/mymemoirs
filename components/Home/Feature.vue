@@ -1,9 +1,5 @@
 <template>
   <div class="relative px-6 w-full xl:px-0">
-    <img
-      class="object-cover object-center absolute inset-0 w-full h-full"
-      src="/feature_bg.svg"
-    />
     <div class="z-10 pt-10 md:pt-40">
       <div class="container mx-auto">
         <div class="flex flex-col-reverse items-center pb-12 md:flex-row">

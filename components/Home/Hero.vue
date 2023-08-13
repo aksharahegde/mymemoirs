@@ -1,10 +1,6 @@
 <template>
   <section>
     <div class="relative px-6 w-full xl:px-0">
-      <img
-        class="object-cover object-center absolute inset-0 w-full h-full dark:hidden"
-        src="/hero2-bg.png"
-      />
       <div class="container flex relative z-10 flex-col-reverse items-center pt-6 mx-auto lg:pt-32 md:flex-row">
         <div class="relative w-full h-full lg:w-1/2 lg:pr-10 xl:pr-0">
           <HomeNoteOne />
