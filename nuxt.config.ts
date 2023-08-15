@@ -2,6 +2,7 @@ const META_TITLE = "";
 const META_DESC = "";
 
 export default defineNuxtConfig({
+  // ssr: false,
   app: {
     head: {
       meta: [
@@ -38,7 +39,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      Inter: true,
+      "Space+Grotesk": true,
     },
   },
   supabase: {

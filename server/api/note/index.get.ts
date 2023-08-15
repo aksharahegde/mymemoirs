@@ -2,9 +2,8 @@ import { serverSupabaseUser, serverSupabaseClient } from "#supabase/server";
 
 export default defineEventHandler(async (event) => {
   const user = await serverSupabaseUser(event);
-  console.log('user', user)
   if (!user) {
-    throw createError({ statusMessage: 'Unauthenticated'})
+    throw createError({ statusMessage: "Unauthenticated" });
   }
   const client = await serverSupabaseClient<any>(event);
   const { data, error } = await client
@@ -17,6 +16,6 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusMessage: error.message });
   }
 
-  console.log('data', data)
+  console.log("data", data);
   return data;
 });

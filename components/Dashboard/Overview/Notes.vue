@@ -5,7 +5,7 @@
         <Icon name="material-symbols:sticky-note-sharp" class="mr-2" />
         <span>Notes</span>
       </div>
-      <nuxt-link to="/dashboard/todo" class="link"> View all </nuxt-link>
+      <nuxt-link to="/dashboard/notes" class="link"> View all </nuxt-link>
     </div>
     <div class="w-full carousel rounded-box">
       <div

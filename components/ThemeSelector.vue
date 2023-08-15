@@ -5,7 +5,7 @@
     </label>
     <ul
       tabindex="0"
-      class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+      class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-36"
     >
       <li
         v-for="(theme, index) in themes"
@@ -21,13 +21,19 @@
 import { useStorage } from "@vueuse/core";
 
 const themes = [
-  { label: "acid", value: "acid" },
-  { label: "bumblebee", value: "bumblebee"},
-  { label: "lofi", value: "lofi"},
+  { label: "lofi", value: "lofi" },
   { label: "forest", value: "forest" },
 ];
+
+
 const selectTheme = (theme) => {
-  document.documentElement.setAttribute("data-theme", theme);
+  const val = ['dark', 'forest'].includes(theme) ? 'forest' : 'lofi'
+  document.documentElement.setAttribute("data-theme", val);
   useStorage("theme", theme);
 };
+
+onMounted(() => {
+  const currentTheme = useStorage('theme')
+  selectTheme(currentTheme?.value)
+})
 </script>

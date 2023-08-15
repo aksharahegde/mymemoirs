@@ -47,9 +47,9 @@ export default {
   fontFamily: {
     sans: ["Inter", "sans-serif"],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["acid", "bumblebee", "lofi", "forest"],
+    themes: ["lofi", "forest"],
     darkTheme: "forest", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
