@@ -42,10 +42,11 @@
         :class="{ 'bg-base-300': note.id === selectedNote && selectedNote.id }"
         @click="selectNote(note)"
       />
+      <DashboardSpinner v-if="isLoading"/>
+      <DashboardNoteEmpty v-else-if="!notes.length" />
     </div>
-    <div class="col-span-9">
-      <DashboardNoteEmpty v-if="!selectedNote && !isAddNote" />
-      <DashboardNoteAdd v-else-if="isAddNote"/>
+    <div class="col-span-9" v-if="!isLoading">
+      <DashboardNoteAdd v-if="isAddNote"/>
       <DashboardNoteDetails v-else :note="selectedNote" />
     </div>
   </div>
@@ -59,14 +60,18 @@ definePageMeta({
 let notes = ref([]);
 let selectedNote = ref(null);
 let isAddNote = ref(false);
+let isLoading = ref(true);
 
 onMounted(() => {
   fetchNotes();
 });
 const fetchNotes = async () => {
   notes.value = await $fetch("/api/note");
+  isLoading.value = false;
   if (notes.value.length > 0) {
     selectedNote.value = notes?.value[0];
+  } else {
+    isAddNote.value = true
   }
 };
 

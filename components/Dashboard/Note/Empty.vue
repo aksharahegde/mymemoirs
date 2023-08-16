@@ -73,6 +73,6 @@
       </g>
     </svg>
     <h1 class="mt-4 text-xl font-semibold">No notes found</h1>
-    <p class="mt-2 font-lg">You don't have any notes yet. Create your first note to get started!</p>
+    <p class="mt-2 text-center font-lg">You don't have any notes yet. Create your first note to get started!</p>
   </div>
 </template>
